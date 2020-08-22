@@ -51,7 +51,7 @@ class LRUCache implements LRU {
 
     public function get($key) {
         $this->moveToFront($key);
-        return $this->keys[$key] ?? null;
+        return array_key_exists($key, $this->keys) ? $this->keys[$key] : null;
     }
 
     private function eliminate() {
