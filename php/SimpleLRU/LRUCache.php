@@ -17,7 +17,7 @@ class LRUCache implements LRU {
     }
 
     private function contains(string $key) {
-        return isset($this->keys[$key]);
+        return array_key_exists($key, $this->keys);
     }
 
     private function outOfRange() {
